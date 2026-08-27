@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alfred — Votre trajet, réglé en un message | AiGenis</title>
+<meta name="description" content="Alfred est un assistant de voyage conversationnel sur WhatsApp. Décrivez votre trajet en train, bus ou avion, il trouve les meilleures options et vous envoie le lien pour réserver.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+    (function () {
+        var script = document.createElement("script");
+        script.async = 1;
+        script.setAttribute("data-cmp-ab","2");
+        script.src = 'https://emrldtp.cc/NTY2OTc2.js?t=566976';
+        document.head.appendChild(script);
+    })();
+</script>
+<style>
+  :root{
+    --ink:#131a2b;
+    --ink-2:#1c2438;
+    --ink-3:#242e47;
+    --amber:#e8b34d;
+    --amber-deep:#c9932e;
+    --paper:#f4efe2;
+    --paper-2:#ece3cd;
+    --text-onink:#ede6d3;
+    --text-onink-dim:#a7ade0;
+    --text-onpaper:#221d13;
+    --text-onpaper-dim:#5b533f;
+    --whatsapp-bubble:#e7f3df;
+    --radius:14px;
+    --maxw:1160px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text-onpaper);
+    font-family:'IBM Plex Sans', system-ui, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  h1,h2,h3{font-family:'Fraunces', serif;font-weight:500;margin:0;letter-spacing:-0.01em;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px;height:7px;border-radius:50%;
+    background:var(--amber);
+    display:inline-block;
+  }
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(19,26,43,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(232,179,77,0.18);
+  }
+  nav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:16px;padding-bottom:16px;
+  }
+  .brand{
+    display:flex;align-items:baseline;gap:9px;
+    font-family:'Fraunces', serif;font-weight:600;font-size:21px;
+    color:var(--text-onink);text-decoration:none;
+  }
+  .brand small{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:400;font-size:11px;letter-spacing:0.08em;
+    color:var(--text-onink-dim);text-transform:uppercase;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:14.5px;
+    padding:11px 20px;border-radius:999px;text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-amber{background:var(--amber);color:#201404;}
+  .btn-amber:hover{transform:translateY(-1px);box-shadow:0 8px 22px -8px rgba(232,179,77,0.65);}
+  .btn-ghost{border:1px solid rgba(237,230,211,0.35);color:var(--text-onink);}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber);}
+
+  /* ---------- HERO ---------- */
+  .hero{background:var(--ink);color:var(--text-onink);position:relative;overflow:hidden;}
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(560px 320px at 82% 18%, rgba(232,179,77,0.16), transparent 70%);
+    pointer-events:none;
+  }
+  .hero .wrap{
+    display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;
+    padding-top:76px;padding-bottom:88px;align-items:center;position:relative;
+  }
+  .hero .eyebrow{color:var(--amber);margin-bottom:22px;}
+  .hero h1{font-size:clamp(34px,4.4vw,54px);line-height:1.08;color:var(--text-onink);}
+  .hero h1 em{color:var(--amber);font-style:italic;}
+  .hero p.lede{
+    font-size:18px;color:var(--text-onink-dim);max-width:46ch;margin:22px 0 32px;
+  }
+  .hero .cta-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .hero .fineprint{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-onink-dim);
+    margin-top:16px;max-width:38ch;
+  }
+
+  /* phone mockup */
+  .phone{
+    width:100%;max-width:340px;margin-left:auto;
+    background:#0d1220;border-radius:32px;padding:10px;
+    box-shadow:0 40px 80px -30px rgba(0,0,0,0.6), 0 0 0 1px rgba(232,179,77,0.15);
+  }
+  .phone-screen{
+    background:#efe7cf;border-radius:24px;overflow:hidden;
+    display:flex;flex-direction:column;height:460px;
+  }
+  .phone-bar{
+    background:var(--ink-3);color:var(--text-onink);
+    padding:14px 16px;display:flex;align-items:center;gap:10px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;font-weight:600;
+    flex-shrink:0;
+  }
+  .phone-bar .av{
+    width:28px;height:28px;border-radius:50%;background:var(--amber);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;color:#201404;font-weight:600;font-size:13px;
+  }
+  .phone-body{flex:1;padding:16px 14px;display:flex;flex-direction:column;gap:10px;overflow:hidden;}
+  .bubble{
+    max-width:86%;padding:9px 13px;border-radius:14px;font-size:13.5px;line-height:1.42;
+    opacity:0;transform:translateY(8px);animation:bubbleIn .5s ease forwards;
+  }
+  .bubble.user{
+    align-self:flex-end;background:var(--whatsapp-bubble);
+    border-bottom-right-radius:4px;color:#1c2b12;
+  }
+  .bubble.alfred{
+    align-self:flex-start;background:#fffdf7;
+    border-bottom-left-radius:4px;color:#221d13;
+    box-shadow:0 1px 0 rgba(0,0,0,0.04);
+  }
+  .bubble .cta-chip{
+    display:inline-block;margin-top:9px;padding:7px 12px;border-radius:8px;
+    background:var(--ink);color:var(--amber);font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;font-weight:500;letter-spacing:0.02em;
+  }
+  @keyframes bubbleIn{to{opacity:1;transform:translateY(0);}}
+
+  /* ---------- DEPARTURE BOARD ---------- */
+  .board-strip{background:#0e1420;border-top:1px solid rgba(232,179,77,0.18);border-bottom:1px solid rgba(232,179,77,0.18);padding:22px 0;}
+  .board-strip .wrap{display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:center;}
+  .board-label{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;
+    text-transform:uppercase;color:var(--text-onink-dim);white-space:nowrap;
+  }
+  .board{
+    display:flex;gap:3px;flex-wrap:wrap;justify-content:center;
+  }
+  .flap{
+    font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;
+    color:var(--amber);background:var(--ink-2);
+    padding:6px 2px;width:19px;text-align:center;border-radius:3px;
+    box-shadow:inset 0 -1px 0 rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+    transition:transform .25s ease;
+  }
+  .flap.space{background:transparent;box-shadow:none;}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:84px 0;}
+  .section-head{max-width:56ch;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(26px,3vw,36px);margin-top:14px;}
+  .section-head .eyebrow{color:var(--amber-deep);}
+  section.onink .section-head .eyebrow{color:var(--amber);}
+  section.onink{background:var(--ink);color:var(--text-onink);}
+  section.onink h2{color:var(--text-onink);}
+  section.onink p{color:var(--text-onink-dim);}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .ticket{
+    position:relative;background:#fffdf6;border-radius:var(--radius);
+    padding:28px 24px 26px;
+    box-shadow:0 1px 0 rgba(0,0,0,0.04), 0 18px 30px -22px rgba(34,29,19,0.35);
+  }
+  .ticket::after{
+    content:"";position:absolute;left:0;right:0;bottom:52px;height:0;
+    border-bottom:2px dashed rgba(34,29,19,0.14);
+  }
+  .ticket .num{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--amber-deep);
+    letter-spacing:0.08em;
+  }
+  .ticket h3{font-size:19px;margin:12px 0 8px;font-weight:500;}
+  .ticket p{margin:0;color:var(--text-onpaper-dim);font-size:14.5px;}
+
+  /* value grid */
+  .valgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .val{padding:26px 4px 0 0;border-top:1px solid rgba(232,179,77,0.28);}
+  .val .mark{
+    width:34px;height:34px;border-radius:9px;background:rgba(232,179,77,0.14);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+    color:var(--amber);font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;
+  }
+  .val h3{font-size:16.5px;color:var(--text-onink);font-weight:600;font-family:'IBM Plex Sans',sans-serif;margin-bottom:6px;}
+  .val p{margin:0;font-size:14px;}
+
+  /* partners */
+  .partners{
+    background:var(--paper-2);border-radius:18px;padding:40px 40px;
+    display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;
+  }
+  .partners p{margin:0;color:var(--text-onpaper-dim);max-width:56ch;}
+  .partner-badge{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.06em;
+    border:1px solid rgba(34,29,19,0.22);border-radius:999px;padding:9px 18px;
+    white-space:nowrap;
+  }
+
+  /* footer */
+  footer{background:var(--ink);color:var(--text-onink-dim);padding:52px 0 40px;}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+  footer .brand{margin-bottom:6px;}
+  footer .legal{font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.7;}
+
+  @media (max-width:880px){
+    .hero .wrap{grid-template-columns:1fr;padding-top:52px;padding-bottom:56px;}
+    .phone{margin:0 auto;max-width:300px;}
+    .steps{grid-template-columns:1fr;}
+    .valgrid{grid-template-columns:1fr 1fr;}
+    .partners{grid-template-columns:1fr;text-align:left;}
+    section{padding:60px 0;}
+  }
+  @media (max-width:520px){
+    .valgrid{grid-template-columns:1fr;}
+    .wrap{padding:0 20px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .bubble{animation:none;opacity:1;transform:none;}
+    .flap{transition:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">AIGENIS <small>Alfred</small></a>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <a href="rgpd.html" style="font-size:13px;color:var(--text-onink-dim);text-decoration:none;">Confidentialité &amp; RGPD</a>
+      <a class="btn btn-amber" href="https://wa.me/15556529148" target="_blank" rel="noopener">Écrire à Alfred</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Assistant de voyage conversationnel</span>
+      <h1>Vos billets de train, bus et avion,<br>réglés en <em>un message.</em></h1>
+      <p class="lede">Décrivez votre trajet à Alfred sur WhatsApp — à l'écrit ou à l'oral. Il complète les détails manquants, compare les options chez nos partenaires de réservation, et vous envoie le lien pour payer. Plus besoin de jongler entre les sites.</p>
+      <div class="cta-row">
+        <a class="btn btn-amber" href="https://wa.me/15556529148" target="_blank" rel="noopener">Discuter avec Alfred</a>
+        <a class="btn btn-ghost" href="#comment-ca-marche">Comment ça marche</a>
+      </div>
+      <p class="fineprint">Gratuit à l'usage. La réservation et le paiement s'effectuent chez notre partenaire de voyage.</p>
+    </div>
+
+    <div class="phone" aria-hidden="true">
+      <div class="phone-screen">
+        <div class="phone-bar">
+          <span class="av">A</span> Alfred
+        </div>
+        <div class="phone-body" id="chatBody">
+          <div class="bubble user" style="animation-delay:.1s">Je dois être à Lyon vendredi matin, je pars de Chartres</div>
+          <div class="bubble alfred" style="animation-delay:.9s">Il me manque juste l'heure d'arrivée souhaitée à Lyon 🙂</div>
+          <div class="bubble user" style="animation-delay:1.7s">Avant 10h si possible</div>
+          <div class="bubble alfred" style="animation-delay:2.5s">Parfait : Chartres → Lyon, vendredi, arrivée avant 10h.<br>Voici la meilleure option ⤵<br><span class="cta-chip">Voir les billets ↗</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="board-strip">
+  <div class="wrap">
+    <span class="board-label">Destinations récentes</span>
+    <div class="board" id="board"></div>
+  </div>
+</div>
+
+<section id="comment-ca-marche">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Comment ça marche</span>
+      <h2>Trois échanges, un billet.</h2>
+    </div>
+    <div class="steps">
+      <div class="ticket">
+        <span class="num">N° 01</span>
+        <h3>Décrivez votre trajet</h3>
+        <p>Un message écrit ou vocal suffit : d'où vous partez, où vous allez, et quand — pas besoin de formulaire.</p>
+      </div>
+      <div class="ticket">
+        <span class="num">N° 02</span>
+        <h3>Alfred prépare votre dossier</h3>
+        <p>Il complète les détails manquants et compose la meilleure option en train, bus ou avion auprès de nos partenaires.</p>
+      </div>
+      <div class="ticket">
+        <span class="num">N° 03</span>
+        <h3>Vous réservez en sécurité</h3>
+        <p>Un lien direct vous emmène chez le partenaire de réservation pour finaliser et payer votre billet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="onink">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Pourquoi Alfred</span>
+      <h2>Un assistant, pas un site de plus.</h2>
+    </div>
+    <div class="valgrid">
+      <div class="val">
+        <div class="mark">◈</div>
+        <h3>Multimodal</h3>
+        <p>Train, bus et avion couverts, en Europe.</p>
+      </div>
+      <div class="val">
+        <div class="mark">◉</div>
+        <h3>Écrit ou vocal</h3>
+        <p>Parlez à Alfred comme à un humain, il comprend.</p>
+      </div>
+      <div class="val">
+        <div class="mark">▢</div>
+        <h3>Aucun compte à créer</h3>
+        <p>Juste votre numéro WhatsApp, rien d'autre.</p>
+      </div>
+      <div class="val">
+        <div class="mark">→</div>
+        <h3>Un seul aller-retour</h3>
+        <p>Vous quittez WhatsApp uniquement pour payer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="partners">
+      <p><strong>Alfred s'appuie sur des plateformes de réservation partenaires</strong>, comme Omio, pour comparer les billets de train, bus et avion à travers l'Europe. La réservation et le paiement s'effectuent toujours directement chez le partenaire, en toute sécurité — Alfred n'intervient jamais dans la transaction.</p>
+      <span class="partner-badge">Réservation via Omio</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand">AIGENIS <small>Alfred</small></div>
+      <div class="legal">Un projet en développement — AiGenis, conseil &amp; développement technique.<br>© <span id="year"></span> AiGenis. <a href="index.html" style="color:var(--amber-deep);text-decoration:none;">Retour à l'accueil</a> &bull; <a href="rgpd.html" style="color:var(--amber-deep);text-decoration:none;">RGPD</a></div>
+    </div>
+    <a class="btn btn-ghost" href="https://wa.me/15556529148" target="_blank" rel="noopener">Écrire à Alfred →</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---- Split-flap departure board ----
+  var routes = [
+    "CHARTRES  ->  LYON      VEN 08H15",
+    "PARIS     ->  BORDEAUX  SAM 11H40",
+    "NANTES    ->  TOULOUSE  LUN 07H05",
+    "LILLE     ->  MARSEILLE MAR 09H30"
+  ];
+  var boardEl = document.getElementById('board');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var routeIndex = 0;
+
+  function renderBoard(text){
+    boardEl.innerHTML = '';
+    text.split('').forEach(function(ch, i){
+      var tile = document.createElement('span');
+      tile.className = 'flap' + (ch === ' ' ? ' space' : '');
+      tile.textContent = ch === ' ' ? '' : ch;
+      if(!reduced){
+        tile.style.transform = 'rotateX(90deg)';
+        setTimeout(function(){
+          tile.style.transform = 'rotateX(0deg)';
+        }, 20 * i);
+      }
+      boardEl.appendChild(tile);
+    });
+  }
+
+  renderBoard(routes[0]);
+
+  if(!reduced){
+    setInterval(function(){
+      routeIndex = (routeIndex + 1) % routes.length;
+      renderBoard(routes[routeIndex]);
+    }, 4200);
+  }
+</script>
+
+</body>
+</html>
