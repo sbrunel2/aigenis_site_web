@@ -1,90 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AIGENIS</title>
-  <style>
-    :root {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-    }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    header {
-      padding: 1.5rem 2rem;
-      border-bottom: 1px solid #334155;
-    }
-    nav {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 1.25rem;
-      letter-spacing: 0.05em;
-      color: var(--text);
-      text-decoration: none;
-    }
-    nav a.link {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-    nav a.link:hover {
-      color: var(--accent);
-    }
-    main {
-      flex: 1;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-      display: flex;
-      align-items: center;
-    }
-    .content {
-      max-width: 600px;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-top: 0;
-      margin-bottom: 1rem;
-    }
-    p {
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 1.1rem;
-    }
-    footer {
-      padding: 1.5rem 2rem;
-      border-top: 1px solid #334155;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-    footer a {
-      color: var(--muted);
-      text-decoration: underline;
-    }
-    footer a:hover {
-      color: var(--text);
-    }
-  </style>
-  <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AiGenis — Des assistants qui simplifient le quotidien</title>
+<meta name="description" content="AiGenis conçoit des solutions d'assistance à l'humain pour simplifier la vie de tous les jours. Alfred, notre premier assistant conversationnel, en est la première brique.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
     (function () {
         var script = document.createElement("script");
         script.async = 1;
@@ -92,30 +16,313 @@
         script.src = 'https://emrldtp.cc/NTY2OTc2.js?t=566976';
         document.head.appendChild(script);
     })();
-  </script>
+</script>
+<style>
+  :root{
+    --ink:#131a2b;
+    --ink-2:#1c2438;
+    --ink-3:#242e47;
+    --amber:#e8b34d;
+    --amber-deep:#c9932e;
+    --paper:#f4efe2;
+    --paper-2:#ece3cd;
+    --text-onink:#ede6d3;
+    --text-onink-dim:#a7ade0;
+    --text-onpaper:#221d13;
+    --text-onpaper-dim:#5b533f;
+    --radius:14px;
+    --maxw:1160px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--text-onpaper);
+    font-family:'IBM Plex Sans', system-ui, sans-serif;
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  h1,h2,h3{font-family:'Fraunces', serif;font-weight:500;margin:0;letter-spacing:-0.01em;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;font-size:12.5px;letter-spacing:0.14em;
+    text-transform:uppercase;display:inline-flex;align-items:center;gap:9px;
+  }
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);display:inline-block;}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;background:rgba(19,26,43,0.94);
+    backdrop-filter:blur(8px);border-bottom:1px solid rgba(232,179,77,0.18);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px;}
+  .brand{
+    display:flex;align-items:baseline;gap:9px;
+    font-family:'Fraunces', serif;font-weight:600;font-size:21px;
+    color:var(--text-onink);text-decoration:none;
+  }
+  .brand small{
+    font-family:'IBM Plex Mono', monospace;font-weight:400;font-size:11px;
+    letter-spacing:0.08em;color:var(--text-onink-dim);text-transform:uppercase;
+  }
+  .navlinks{display:flex;align-items:center;gap:30px;}
+  .navlinks a.link{
+    font-size:14px;color:var(--text-onink-dim);text-decoration:none;
+    transition:color .15s ease;
+  }
+  .navlinks a.link:hover{color:var(--amber);}
+  .navlinks .divider{width:1px;height:18px;background:rgba(237,230,211,0.2);}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:14.5px;
+    padding:11px 20px;border-radius:999px;text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-amber{background:var(--amber);color:#201404;}
+  .btn-amber:hover{transform:translateY(-1px);box-shadow:0 8px 22px -8px rgba(232,179,77,0.65);}
+  .btn-ghost{border:1px solid rgba(237,230,211,0.35);color:var(--text-onink);}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber);}
+  .navtoggle{display:none;background:none;border:0;color:var(--text-onink);cursor:pointer;padding:6px;}
+  .navtoggle svg{width:22px;height:22px;}
+
+  /* ---------- HERO ---------- */
+  .hero{background:var(--ink);color:var(--text-onink);position:relative;overflow:hidden;}
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(620px 340px at 18% 12%, rgba(232,179,77,0.14), transparent 70%);
+    pointer-events:none;
+  }
+  .hero .wrap{padding-top:88px;padding-bottom:96px;position:relative;}
+  .hero-inner{max-width:62ch;}
+  .hero .eyebrow{color:var(--amber);margin-bottom:22px;}
+  .hero h1{font-size:clamp(36px,5vw,58px);line-height:1.06;}
+  .hero h1 em{color:var(--amber);font-style:italic;}
+  .hero p.lede{font-size:19px;color:var(--text-onink-dim);max-width:52ch;margin:24px 0 34px;}
+  .cta-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+
+  /* ---------- MODULE DIAGRAM ---------- */
+  .modules-section{background:var(--ink);padding-bottom:100px;position:relative;}
+  .rail{
+    position:relative;display:flex;align-items:stretch;gap:0;
+    margin-top:20px;overflow-x:auto;padding-bottom:6px;
+  }
+  .rail-line{
+    position:absolute;top:38px;left:0;right:0;height:1px;
+    background:repeating-linear-gradient(to right, rgba(237,230,211,0.28) 0 6px, transparent 6px 12px);
+    z-index:0;
+  }
+  .module{
+    position:relative;z-index:1;flex:0 0 230px;margin-right:26px;
+    padding-top:0;
+  }
+  .module-dot{
+    width:11px;height:11px;border-radius:50%;background:var(--ink);
+    border:2px solid var(--amber);margin-bottom:26px;
+  }
+  .module.future .module-dot{border-color:rgba(237,230,211,0.3);}
+  .module-card{
+    border-radius:12px;padding:22px 20px;height:180px;
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .module.live .module-card{
+    background:var(--ink-2);border:1px solid rgba(232,179,77,0.4);
+    box-shadow:0 20px 40px -26px rgba(232,179,77,0.35);
+  }
+  .module.future .module-card{
+    border:1px dashed rgba(237,230,211,0.26);background:transparent;
+  }
+  .module-tag{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;
+    text-transform:uppercase;padding:4px 9px;border-radius:999px;
+    width:fit-content;
+  }
+  .module.live .module-tag{background:rgba(232,179,77,0.18);color:var(--amber);}
+  .module.future .module-tag{background:rgba(237,230,211,0.08);color:var(--text-onink-dim);}
+  .module-card h3{font-size:18px;color:var(--text-onink);margin-top:14px;}
+  .module.future .module-card h3{color:var(--text-onink-dim);font-style:italic;font-weight:400;}
+  .module-card p{font-size:13px;color:var(--text-onink-dim);margin:8px 0 0;}
+  .module-card a.mlink{
+    margin-top:auto;font-family:'IBM Plex Mono',monospace;font-size:12px;
+    color:var(--amber);text-decoration:none;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:88px 0;}
+  .section-head{max-width:58ch;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(26px,3vw,36px);margin-top:14px;}
+  .section-head .eyebrow{color:var(--amber-deep);}
+
+  .valgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .val{background:#fffdf6;border-radius:var(--radius);padding:28px 24px;box-shadow:0 1px 0 rgba(0,0,0,0.04), 0 18px 30px -24px rgba(34,29,19,0.3);}
+  .val .mark{
+    width:34px;height:34px;border-radius:9px;background:rgba(201,147,46,0.12);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+    color:var(--amber-deep);font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;
+  }
+  .val h3{font-size:18px;font-weight:500;margin-bottom:8px;}
+  .val p{margin:0;color:var(--text-onpaper-dim);font-size:14.5px;}
+
+  /* studio / conseil */
+  .studio{
+    background:var(--paper-2);border-radius:18px;padding:44px 40px;
+    display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center;
+  }
+  .studio p{margin:0;color:var(--text-onpaper-dim);max-width:58ch;}
+  .studio .eyebrow{color:var(--amber-deep);margin-bottom:14px;}
+
+  /* footer */
+  footer{background:var(--ink);color:var(--text-onink-dim);padding:52px 0 40px;}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+  footer .brand{margin-bottom:6px;}
+  footer .legal{font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.7;}
+
+  @media (max-width:880px){
+    .navlinks{position:fixed;top:64px;left:0;right:0;background:var(--ink);
+      flex-direction:column;align-items:flex-start;padding:20px 28px 26px;
+      border-bottom:1px solid rgba(232,179,77,0.18);
+      transform:translateY(-8px);opacity:0;pointer-events:none;transition:.18s ease;}
+    .navlinks.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+    .navlinks .divider{display:none;}
+    .navtoggle{display:block;}
+    .valgrid{grid-template-columns:1fr;}
+    .studio{grid-template-columns:1fr;text-align:left;}
+    section{padding:60px 0;}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+</style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <a href="index.html" class="logo">AIGENIS</a>
-      <div style="display:flex;gap:1.5rem;align-items:center;">
-        <a href="alfred.html" class="link">Alfred</a>
-        <a href="rgpd.html" class="link">Confidentialité & RGPD</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <div class="content">
-      <h1>AIGENIS</h1>
-      <p>Site en cours de mise à jour.</p>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">AIGENIS</a>
+    <div class="navlinks" id="navlinks">
+      <a class="link" href="#ecosysteme">Nos assistants</a>
+      <a class="link" href="#approche">Notre approche</a>
+      <a class="link" href="#conseil">Conseil &amp; développement</a>
+      <span class="divider"></span>
+      <a class="link" href="rgpd.html">Confidentialité &amp; RGPD</a>
+      <a class="btn btn-amber" href="alfred.html" style="margin-top:8px;">Découvrir Alfred →</a>
     </div>
-  </main>
+    <button class="navtoggle" id="navtoggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
 
-  <footer>
-    <p>&copy; 2026 AIGENIS. Tous droits réservés. &bull; <a href="rgpd.html">Politique RGPD</a></p>
-  </footer>
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">Solutions d'assistance à l'humain</span>
+      <h1>Des assistants qui <em>simplifient</em><br>la vie de tous les jours.</h1>
+      <p class="lede">AiGenis conçoit des assistants conversationnels qui prennent en charge les tâches du quotidien qui nous font perdre du temps ou de l'énergie — pour que vous n'ayez plus qu'à demander, simplement.</p>
+      <div class="cta-row">
+        <a class="btn btn-amber" href="alfred.html">Découvrir Alfred</a>
+        <a class="btn btn-ghost" href="#ecosysteme">Notre écosystème</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="modules-section" id="ecosysteme">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--amber);">L'écosystème AiGenis</span>
+      <h2 style="color:var(--text-onink);">Une famille d'assistants, brique par brique.</h2>
+      <p style="color:var(--text-onink-dim);margin-top:14px;">Alfred est le premier assistant que nous mettons en service. D'autres briques viendront s'y ajouter, chacune dédiée à simplifier un pan différent du quotidien.</p>
+    </div>
+
+    <div class="rail">
+      <div class="rail-line"></div>
+
+      <div class="module live">
+        <div class="module-dot"></div>
+        <div class="module-card">
+          <span class="module-tag">● En ligne</span>
+          <div>
+            <h3>Alfred</h3>
+            <p>Réserve vos trajets en train, bus et avion depuis WhatsApp.</p>
+          </div>
+          <a class="mlink" href="alfred.html">Découvrir →</a>
+        </div>
+      </div>
+
+      <div class="module future">
+        <div class="module-dot"></div>
+        <div class="module-card">
+          <span class="module-tag">À venir</span>
+          <div><h3>Brique 02</h3></div>
+        </div>
+      </div>
+
+      <div class="module future">
+        <div class="module-dot"></div>
+        <div class="module-card">
+          <span class="module-tag">À venir</span>
+          <div><h3>Brique 03</h3></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approche">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Notre approche</span>
+      <h2>Pourquoi des assistants, plutôt que des sites de plus ?</h2>
+    </div>
+    <div class="valgrid">
+      <div class="val">
+        <div class="mark">◈</div>
+        <h3>On vous rencontre là où vous êtes</h3>
+        <p>Pas de nouvelle app à installer, pas de compte à créer — nos assistants vivent dans les outils que vous utilisez déjà, comme WhatsApp.</p>
+      </div>
+      <div class="val">
+        <div class="mark">◉</div>
+        <h3>On parle votre langue, pas celle des formulaires</h3>
+        <p>Un message écrit ou vocal, en langage naturel, suffit. L'assistant se charge de traduire ça en action concrète.</p>
+      </div>
+      <div class="val">
+        <div class="mark">▢</div>
+        <h3>Du solide derrière la simplicité</h3>
+        <p>Chaque assistant s'appuie sur une vraie expertise technique — développement, IoT, automatisation — pas sur une promesse marketing seule.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="conseil">
+  <div class="wrap">
+    <div class="studio">
+      <div>
+        <span class="eyebrow">Au-delà des assistants</span>
+        <p><strong>AiGenis accompagne aussi les entreprises</strong> en conseil et développement technique — applications full-stack, architectures IoT et automatisation. L'expertise qui alimente Alfred et les prochaines briques est la même que nous mettons au service de nos clients.</p>
+      </div>
+      <span class="partner-badge" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.06em;border:1px solid rgba(34,29,19,0.22);border-radius:999px;padding:9px 18px;white-space:nowrap;">Full-stack · IoT · Automatisation</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand">AIGENIS</div>
+      <div class="legal">Conseil &amp; développement technique — solutions d'assistance à l'humain.<br>© <span id="year"></span> AiGenis. <a href="alfred.html" style="color:var(--amber-deep);text-decoration:none;">Alfred</a> &bull; <a href="rgpd.html" style="color:var(--amber-deep);text-decoration:none;">RGPD</a></div>
+    </div>
+    <a class="btn btn-ghost" href="alfred.html">Découvrir Alfred →</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
 
 </body>
 </html>
