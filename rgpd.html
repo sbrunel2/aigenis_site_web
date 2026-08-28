@@ -1,121 +1,198 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Politique de Confidentialité & RGPD - AIGENIS</title>
-  <style>
-    :root {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-    }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    header {
-      padding: 1.5rem 2rem;
-      border-bottom: 1px solid #334155;
-    }
-    nav {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 1.25rem;
-      letter-spacing: 0.05em;
-      color: var(--text);
-      text-decoration: none;
-    }
-    nav a.link {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-    nav a.link:hover {
-      color: var(--accent);
-    }
-    main {
-      flex: 1;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-      line-height: 1.6;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-top: 0;
-      color: var(--text);
-    }
-    h2 {
-      font-size: 1.25rem;
-      margin-top: 2rem;
-      color: var(--accent);
-    }
-    p, li {
-      color: var(--muted);
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    footer {
-      padding: 1.5rem 2rem;
-      border-top: 1px solid #334155;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-    footer a {
-      color: var(--muted);
-      text-decoration: underline;
-    }
-    footer a:hover {
-      color: var(--text);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de Confidentialité &amp; RGPD — AiGenis</title>
+<meta name="description" content="Politique de confidentialité et RGPD d'AiGenis, incluant le traitement de données réalisé par l'assistant WhatsApp Alfred.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#131a2b; --ink-2:#1c2438; --ink-3:#242e47;
+    --amber:#e8b34d; --amber-deep:#c9932e;
+    --paper:#f4efe2; --paper-2:#ece3cd;
+    --text-onink:#ede6d3; --text-onink-dim:#a7ade0;
+    --text-onpaper:#221d13; --text-onpaper-dim:#5b533f;
+    --maxw:1160px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--paper);color:var(--text-onpaper);
+    font-family:'IBM Plex Sans', system-ui, sans-serif;
+    font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  h1,h2{font-family:'Fraunces', serif;font-weight:500;letter-spacing:-0.01em;}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;}
+
+  nav{
+    position:sticky;top:0;z-index:50;background:rgba(19,26,43,0.94);
+    backdrop-filter:blur(8px);border-bottom:1px solid rgba(232,179,77,0.18);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;}
+  .brand{
+    font-family:'Fraunces', serif;font-weight:600;font-size:21px;
+    color:var(--text-onink);text-decoration:none;
+  }
+  .navlinks{display:flex;align-items:center;gap:26px;}
+  .navlinks a{font-size:14px;color:var(--text-onink-dim);text-decoration:none;transition:color .15s ease;}
+  .navlinks a:hover{color:var(--amber);}
+  .navlinks a.current{color:var(--amber);}
+
+  header.page-head{background:var(--ink);color:var(--text-onink);padding:64px 0 56px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;font-size:12.5px;letter-spacing:0.14em;
+    text-transform:uppercase;color:var(--amber);display:inline-flex;align-items:center;gap:9px;
+  }
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);}
+  header.page-head h1{font-size:clamp(28px,4vw,42px);margin:16px 0 0;color:var(--text-onink);}
+  header.page-head .updated{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--text-onink-dim);margin-top:14px;
+  }
+
+  main{max-width:760px;margin:0 auto;padding:56px 28px 80px;}
+  .notice{
+    background:var(--paper-2);border-left:3px solid var(--amber-deep);
+    border-radius:8px;padding:18px 20px;font-size:14.5px;color:var(--text-onpaper-dim);
+    margin-bottom:44px;
+  }
+  section{margin-bottom:38px;}
+  h2{font-size:19px;color:var(--text-onpaper);margin:0 0 12px;display:flex;align-items:baseline;gap:10px;}
+  h2 .n{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--amber-deep);font-weight:600;
+  }
+  p, li{color:var(--text-onpaper-dim);font-size:15px;}
+  ul{padding-left:1.3rem;margin:10px 0;}
+  li{margin-bottom:6px;}
+  strong{color:var(--text-onpaper);}
+  .subhead{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;
+    text-transform:uppercase;color:var(--amber-deep);margin:18px 0 6px;
+  }
+  table.recap{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+  table.recap th, table.recap td{
+    text-align:left;padding:9px 10px;border-bottom:1px solid rgba(34,29,19,0.12);
+    vertical-align:top;
+  }
+  table.recap th{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.05em;
+    text-transform:uppercase;color:var(--text-onpaper-dim);font-weight:500;
+  }
+
+  footer{background:var(--ink);color:var(--text-onink-dim);padding:40px 0;}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer .legal{font-family:'IBM Plex Mono',monospace;font-size:11.5px;}
+  footer a{color:var(--amber-deep);text-decoration:none;}
+
+  @media (max-width:600px){
+    main{padding:40px 20px 60px;}
+    .navlinks{gap:16px;}
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <a href="index.html" class="logo">AIGENIS</a>
-      <a href="index.html" class="link">&larr; Retour à l'accueil</a>
-    </nav>
-  </header>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">AIGENIS</a>
+    <div class="navlinks">
+      <a href="alfred.html">Alfred</a>
+      <a href="rgpd.html" class="current">Confidentialité &amp; RGPD</a>
+      <a href="index.html">← Accueil</a>
+    </div>
+  </div>
+</nav>
 
-  <main>
-    <h1>Politique de Confidentialité & RGPD</h1>
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Données personnelles</span>
+    <h1>Politique de confidentialité &amp; RGPD</h1>
+    <div class="updated">Dernière mise à jour : 2026</div>
+  </div>
+</header>
 
-    <h2>1. Responsable du traitement</h2>
-    <p>Le responsable du traitement des données pour le site <strong>aigenis.fr</strong> est AIGENIS.</p>
+<main>
+  <div class="notice">
+    Cette page couvre à la fois le site <strong>aigenis.fr</strong> et l'assistant conversationnel <strong>Alfred</strong>, accessible sur WhatsApp. Les traitements de données diffèrent selon que vous consultez simplement ce site ou que vous échangez avec Alfred.
+  </div>
 
-    <h2>2. Données collectées</h2>
-    <p>Ce site vitrine ne collecte aucune donnée personnelle directe (aucun formulaire ni création de compte). Aucun cookie publicitaire ou de suivi tiers n'est déposé.</p>
+  <section>
+    <h2><span class="n">01</span> Responsable du traitement</h2>
+    <p>Le responsable du traitement des données décrites ici est <strong>AiGenis</strong>. Pour toute question relative à vos données personnelles, vous pouvez nous contacter à l'adresse <strong>contact@aigenis.fr</strong>.</p>
+  </section>
 
-    <h2>3. Journaux serveur (Logs)</h2>
-    <p>Lors de votre navigation, le serveur d'hébergement peut collecter des données techniques minimales (adresse IP, type de navigateur, date et heure d'accès) à des fins strictement sécuritaires et de maintenance technique.</p>
+  <section>
+    <h2><span class="n">02</span> Le site aigenis.fr</h2>
+    <p>Le site vitrine lui-même ne comporte aucun formulaire ni création de compte. Il ne dépose pas de cookie publicitaire. Le serveur d'hébergement peut néanmoins collecter des données techniques minimales de connexion (adresse IP, type de navigateur, date et heure d'accès) à des fins de sécurité et de maintenance.</p>
+  </section>
 
-    <h2>4. Vos droits</h2>
-    <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles.</p>
-    <p>Pour toute question concernant vos données, vous pouvez nous contacter à l'adresse suivante : <strong>contact@aigenis.fr</strong>.</p>
-  </main>
+  <section>
+    <h2><span class="n">03</span> L'assistant Alfred (WhatsApp)</h2>
+    <p>Lorsque vous échangez avec Alfred sur WhatsApp, nous collectons les données nécessaires à la fourniture du service :</p>
+    <ul>
+      <li>Votre numéro de téléphone WhatsApp ;</li>
+      <li>Les informations que vous nous communiquez au fil de la conversation : nom, prénom, adresse e-mail, adresse postale, date de naissance, numéro de carte de réduction transport, le cas échéant ;</li>
+      <li>Le contenu de vos demandes de trajet (villes de départ et d'arrivée, dates de voyage) ;</li>
+      <li>Vos messages, écrits ou vocaux, nécessaires au traitement de votre demande.</li>
+    </ul>
+  </section>
 
-  <footer>
-    <p>&copy; 2026 AIGENIS. Tous droits réservés. &bull; <a href="index.html">Accueil</a></p>
-  </footer>
+  <section>
+    <h2><span class="n">04</span> Finalités et base légale</h2>
+    <p>Ces données sont traitées pour <strong>exécuter le service que vous nous demandez</strong> : comprendre votre demande de trajet, la compléter si nécessaire, et vous proposer un lien de réservation adapté auprès de nos partenaires de voyage. La base légale du traitement est l'exécution d'une mesure précontractuelle ou contractuelle prise à votre demande (article 6.1.b du RGPD).</p>
+  </section>
+
+  <section>
+    <h2><span class="n">05</span> Destinataires des données</h2>
+    <p>Vos données ne sont jamais vendues. Elles peuvent être transmises aux prestataires suivants, strictement dans la mesure nécessaire au fonctionnement d'Alfred :</p>
+    <table class="recap">
+      <tr><th>Prestataire</th><th>Rôle</th></tr>
+      <tr><td>Meta (WhatsApp Business API)</td><td>Transport des messages échangés avec Alfred</td></tr>
+      <tr><td>OpenAI</td><td>Transcription des messages vocaux et compréhension du langage naturel</td></tr>
+      <tr><td>Omio (via Travelpayouts)</td><td>Partenaire de réservation vers lequel vous êtes redirigé(e) pour finaliser votre achat de billet</td></tr>
+      <tr><td>Notre hébergeur</td><td>Stockage sécurisé de la base de données du service</td></tr>
+    </table>
+    <p>Une fois redirigé(e) vers Omio pour réserver, votre relation avec ce partenaire est régie par sa propre politique de confidentialité, distincte de la nôtre.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">06</span> Transferts hors Union Européenne</h2>
+    <p>Certains de nos prestataires (Meta, OpenAI) sont établis hors de l'Union européenne. Les transferts de données vers ces prestataires s'effectuent dans le cadre des garanties appropriées prévues par leurs politiques respectives (telles que les clauses contractuelles types de la Commission européenne).</p>
+  </section>
+
+  <section>
+    <h2><span class="n">07</span> Durée de conservation</h2>
+    <p>Vos données sont conservées pendant la durée nécessaire à la fourniture du service, puis supprimées au plus tard <strong>3 ans après votre dernier contact</strong> avec Alfred, en l'absence de nouvel échange.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">08</span> Vos droits</h2>
+    <p>Conformément au RGPD et à la loi Informatique et Libertés, vous disposez des droits suivants sur vos données personnelles :</p>
+    <ul>
+      <li>Droit d'accès, de rectification et d'effacement ;</li>
+      <li>Droit à la limitation et à l'opposition du traitement ;</li>
+      <li>Droit à la portabilité de vos données ;</li>
+      <li>Droit de retirer votre consentement à tout moment, lorsque le traitement en dépend.</li>
+    </ul>
+    <p>Pour exercer ces droits, contactez-nous à <strong>contact@aigenis.fr</strong>. Vous disposez également du droit d'introduire une réclamation auprès de la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color:var(--amber-deep);">www.cnil.fr</a>).</p>
+  </section>
+
+  <section>
+    <h2><span class="n">09</span> Sécurité</h2>
+    <p>Nous mettons en œuvre des mesures techniques et organisationnelles raisonnables pour protéger vos données contre l'accès non autorisé, la perte ou la divulgation.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="legal">© <span id="year"></span> AiGenis. <a href="index.html">Accueil</a> &bull; <a href="alfred.html">Alfred</a></div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
 </body>
 </html>
